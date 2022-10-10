@@ -1,20 +1,31 @@
-var express = require("express");
-var router = express.Router();
-const instascrap = require("../insta_scrap");
+const mongoose = require("mongoose");
 
-/* GET users listing. */
-router.get("/", function (req, res, next) {
-  res.send("respond with a resource");
+mongoose.connect("mongodb://localhost:27017/week5", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
-router.post("/info", function (req, res, next) {
-  instascrap
-    .getReport(req.body.username)
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+
+  avatarUrl: {
+    type: String,
+  },
 });
 
-module.exports = router;
+const User = mongoose.model("user", UserSchema);
+module.exports = User;

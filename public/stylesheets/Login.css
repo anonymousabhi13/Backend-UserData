@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    background-image: url('https://i0.wp.com/www.cssscript.com/wp-content/uploads/2021/08/Glassmorphism-Style-Frosted-Overlay-Generator.png?resize=380%2C200&ssl=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.container {
+    background: transparent;
+
+}
+
+.card {
+    background-color: transparent;
+    border: .1em solid rgb(158, 154, 154);
+}
+
+.btn {
+    background-color: transparent;
+    border: 1px solid rgb(170, 170, 170);
+    background: rgb(179, 179, 179);
+}
+
+/* placeholder background transparent */
+.container input {
+    background-color: transparent;
+    color: red;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+}
+span{
+    margin-left: 3rem;
+}
